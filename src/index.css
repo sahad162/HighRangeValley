@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Satoshi";
+	src: url("../src/assets/fonts/Satoshi-Regular.otf")
+}
+@font-face {
+  font-family: "Doto";
+  src: url("../src/assets/fonts/Doto-VariableFontwght.ttf");
+}
+
+@theme{
+  --font-satoshi:Satoshi 
+}
+@theme{
+  --font-doto:Doto
+}
