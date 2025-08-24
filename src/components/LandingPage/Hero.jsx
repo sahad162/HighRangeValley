@@ -13,7 +13,7 @@ function Hero() {
             </h2>
             <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
               Handpicked from the valleys of highrange, our teas and spices
-              bring you the rich, unspoiled essence of the highlands.
+              bring you the rich, unspoiled essence of the highlands .
             </p>
             <div className="buttons mt-7 flex lg:justify-start justify-center  gap-3">
               <button
