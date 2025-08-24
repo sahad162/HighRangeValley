@@ -9,9 +9,24 @@
   src: url("../src/assets/fonts/Doto-VariableFontwght.ttf");
 }
 
+@font-face{
+  font-family: "Satoshi-italic";
+  src: url("../src/assets/fonts/Satoshi-BoldItalic.otf");
+}
+@font-face{
+  font-family: "Satoshi-medium";
+  src: url("../src/assets/fonts/Satoshi-Medium.otf");
+}
 @theme{
   --font-satoshi:Satoshi 
 }
 @theme{
+  --font-satoshi-medium:Satoshi-medium 
+}
+@theme{
   --font-doto:Doto
+}
+
+@theme{
+  --font-satoshiItalic:Satoshi-italic
 }

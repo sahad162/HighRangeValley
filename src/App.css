@@ -1,0 +1,38 @@
+.product{
+    height:auto;
+    width: 20em;
+    position: absolute;
+    top:clamp(20vh,23vh,30vh);
+    left: 13%;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  
+  .product {
+    position: absolute;
+    left: 15%;
+    width: 22em;
+   
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1500px) {
+  
+  .product {
+    position: absolute;
+    left: 15%;
+    width: 24em;
+ 
+  }
+}
+
+@media (min-width: 1500px)  {
+  
+  .product {
+    position: absolute;
+    left: 14%;
+    width: 30%;
+   
+  }
+}
+
