@@ -18,14 +18,14 @@ function Hero() {
             <div className="buttons mt-7 flex lg:justify-start justify-center  gap-3">
               <button
                 type="submit"
-                className="flex gap-2 items-center py-4 px-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
+                className="flex gap-2 items-center px-3 py-3 lg:px-4 lg:py-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
               >
-                <i className="fa-brands fa-whatsapp text-xl md:text-2xl"></i>{" "}
+                <i className="fa-brands fa-whatsapp text-sm md:text-2xl"></i>{" "}
                 <span>Connect now</span>
               </button>
 
-              <button className="px-4 py-4 flex text-[#146B2D] items-center gap-2">
-                <i className="fa-solid fa-phone text-xl md:text-2xl"></i>
+              <button className="px-3 py-3 lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2">
+                <i className="fa-solid fa-phone text-sm md:text-2xl"></i>
                 <span>Call now</span>
               </button>
             </div>
