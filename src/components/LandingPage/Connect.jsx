@@ -2,12 +2,11 @@ import React from "react";
 
 export default function Connect() {
   return (
-   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-[100px] py-20 bg-[#F7F9F3]">
-  {/* Left Info Column */}
+   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-[2em] pb-6  bg-[#F7F9F3]">
   <div className="flex flex-col justify-between max-w-xl  w-full ">
     <div className="space-y-6 mt-8">
       <h2
-        className="font-satoshi font-medium text-4xl md:text-[48px] leading-tight text-[#141414]"
+        className="font-satoshi font-medium text-4xl md:text-[3em] leading-tight text-[#141414]"
         style={{ fontFeatureSettings: "'pnum' on, 'lnum' on" }}
       >
         Get connected now

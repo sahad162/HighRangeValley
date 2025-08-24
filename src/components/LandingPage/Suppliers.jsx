@@ -16,16 +16,16 @@ const brands = [
 
 const Suppliers = () => {
   return (
-    <section className="relative py-20 mt-10   font-satoshi bg-[#F7F9F3]">
+    <section className="relative py-20    font-satoshi bg-[#F7F9F3]">
       <div className="absolute -top-30 -left-40  w-[437px] h-[437px] rounded-full opacity-60 blur-[100px] bg-[radial-gradient(circle,_#D4E157_0%,_#1D6D21_40%,_rgba(29,109,33,0.3)_60%,_transparent_100%)] pointer-events-none "></div>
-       <div className="absolute left-20 top-10 ">
+       <div className="absolute top-8 left-2 xl:left-12">
         <img src="/leaf.png" alt="leaf" className="hidden sm:block w-20 mb-3  " />
        </div>
-       <div className="absolute right-0 top-0 ">
+       <div className="absolute right-0 top-0  ">
          <img src="/top right.png" alt="leaf" className=" w-50 sm:w-60 mb-3  " /></div>
-      <div className="w-[90%] max-w-[1300px] mx-auto flex flex-wrap gap-10 justify-between sm:justify-center items-center sm:items-start">
-        <div className="flex flex-col gap-10  md:gap-20 min-w-[320px] flex-1 ms-5">
-          <h2 className="text-3xl mt-2 sm:mt-0 sm:text-4xl font-[500]  text-[#141414] leading-tight tracking-wider">
+      <div className="w-[90%] max-w-7xl mx-auto flex flex-wrap gap-10 justify-between sm:justify-center items-center sm:items-start">
+        <div className="flex flex-col gap-10 lg:gap-20 min-w-[320px] flex-1">
+          <h2 className="text-3xl mt-2 sm:mt-0 sm:text-4xl md:text-4xl font-[500] font-satoshi-medium  text-[#141414] leading-tight tracking-wider">
             We're the <br  /> Supplier to Top <br /> Brands
           </h2>
           <button className="bg-gradient-to-r from-[#7ec850] to-[#2e7d32] text-white rounded-full sm:px-10 py-3 px-9 sm:py-3 text-base font-satoshi font-medium shadow-md hover:opacity-90 transition  w-fit">
@@ -33,7 +33,7 @@ const Suppliers = () => {
           </button>
         </div>
 
-        <div className="flex flex-col gap-8  w-full sm:p-0 p-2 md:w-[75%] lg:w-[50%] sm:me-15  ">
+        <div className="flex flex-col gap-8  md:me-10  w-full sm:p-0  md:w-[90%] lg:w-[50%]   ">
           <p className="text-lg font-light text-[#222]">
             Our dedication to quality and reliability has earned us the trust of
             some of the biggest names in the industry. As a preferred supplier,
