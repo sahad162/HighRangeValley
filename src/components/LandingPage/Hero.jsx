@@ -11,7 +11,7 @@ function Hero() {
             <h2 className="text-[2em] sm:text-[3em] lg:text-[3em] leading-tight font-[500]">
               Awaken your senses <br /> with every sip and <br /> sprinkle
             </h2>
-            <p className="mt-6 w-[80%] font-satoshi  font-light">
+            <p className="mt-6 w-full font-satoshi  font-light">
               Handpicked from the valleys of highrange, our teas and spices
               bring you the rich, unspoiled essence of the highlands.
             </p>
