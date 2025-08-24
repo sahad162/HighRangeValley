@@ -9,54 +9,23 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const images = document.images;
-    let loadedCount = 0;
-    const startTime = Date.now(); 
+    // Just wait for 3 seconds
+    const timer = setTimeout(() => setLoading(false), 3000);
 
-    if (images.length === 0) {
-      finishLoading();
-      return;
-    }
-
-    const onImageLoad = () => {
-      loadedCount++;
-      if (loadedCount === images.length) {
-        finishLoading();
-      }
-    };
-
-    const finishLoading = () => {
-      const elapsed = Date.now() - startTime;
-      const remaining = 3000 - elapsed; 
-      setTimeout(() => setLoading(false), remaining > 0 ? remaining : 0);
-    };
-
-    for (let i = 0; i < images.length; i++) {
-      if (images[i].complete) {
-        onImageLoad();
-      } else {
-        images[i].addEventListener("load", onImageLoad);
-        images[i].addEventListener("error", onImageLoad);
-      }
-    }
-
-    return () => {
-      for (let i = 0; i < images.length; i++) {
-        images[i].removeEventListener("load", onImageLoad);
-        images[i].removeEventListener("error", onImageLoad);
-      }
-    };
+    return () => clearTimeout(timer); // cleanup
   }, []);
 
   return (
     <>
       {loading && <Loader />}
 
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      {!loading && (
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      )}
     </>
   );
 }
