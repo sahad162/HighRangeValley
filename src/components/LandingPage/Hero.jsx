@@ -1,17 +1,18 @@
 import React from "react";
 function Hero() {
   return (
-    <section className=" bg-white    relative  ">
+    <section className=" bg-white relative mb-5 lg:mb-12    ">
       <div className="leaf relative top-5 -left-10">
         <img src="/top-left.png" alt="left-leaf" />
       </div>
-      <div className="px-5 sm:px-10 flex flex-col-reverse md:px-15 lg:grid lg:grid-cols-2 gap-4 ">
+      <div className="px-5 sm:px-10 flex flex-col-reverse md:px-20 lg:grid lg:grid-cols-2 gap-4 ">
         <div className="px-4">
           <div className="heading  w-full font-satoshi-medium">
-            <h2 className="text-[2em] sm:text-[3em] lg:text-[3em] leading-tight font-[500]">
+            <h2 className="text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
               Awaken your senses <br /> with every sip and <br /> sprinkle
             </h2>
-            <p className="mt-6 w-full font-satoshi  font-light">
+     <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
+
               Handpicked from the valleys of highrange, our teas and spices
               bring you the rich, unspoiled essence of the highlands.
             </p>
@@ -33,22 +34,22 @@ function Hero() {
             <div className="flex items-center mt-12 sm:justify-center lg:justify-start   ">
               <div className="flex -space-x-4">
                 <img
-                  className="w-13 h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im4.png"
                   alt="user1"
                 />
                 <img
-                  className="w-13 h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im2.png"
                   alt="user2"
                 />
                 <img
-                  className="w-13 h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im3.png"
                   alt="user3"
                 />
                 <img
-                  className="w-13 h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im1.png"
                   alt="user4"
                 />
@@ -56,9 +57,9 @@ function Hero() {
 
               <div className="border-l-[0.1em] ml-4 border-[#B6B6B6] h-12"></div>
 
-              <div className="ml-6">
-                <p className=" text-base md:text-lg font-medium">
-                  <span className="text-[#146B2D] font-bold font-satoshi">
+              <div className="ml-6 ">
+                <p className=" text-sm sm:text-base xl:text-lg font-light ">
+                  <span className="text-[#146B2D] font-light font-satoshi">
                     1000+
                   </span>{" "}
                   happy customers
@@ -71,7 +72,7 @@ function Hero() {
             </div>
           </div>
         </div>
-<div className="relative xl:-mt-30 xl:w-[95%] h-[95%]">
+<div className="relative -mt-15 lg:-mt-10 xl:-mt-30 lg:w-full lg:h-full  xl:w-[95%] h-[95%]">
  
   <div className="absolute z-20 top-[25%] left-[13%] sm:top-[30%] sm:left-[20%] md:top-[25%] md:left-[20%] lg:top-[18%] lg:left-[10%] xl:top-40 xl:left-20
                   inline-block rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-4 
@@ -92,7 +93,7 @@ function Hero() {
                   bg-[radial-gradient(circle,_#D4E157_0%,_#1D6D21_40%,_rgba(29,109,33,0.3)_60%,_transparent_100%)]"></div>
 
  
-  <div className="relative z-10  w-full h-full">
+  <div className="relative z-10   w-full h-full">
     <img src="/left-image-fd.svg" alt="" />
   </div>
 </div>
