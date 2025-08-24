@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Connect() {
   return (
-   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-6 md:px-[2em] pb-6  bg-[#F7F9F3]">
-  <div className="flex flex-col justify-between max-w-xl  w-full ">
+   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-10 lg:px-20  pb-20  bg-[#F7F9F3]">
+  <div className="flex flex-col justify-between   w-full ">
     <div className="space-y-6 mt-8">
       <h2
         className="font-satoshi font-medium text-4xl md:text-[3em] leading-tight text-[#141414]"
@@ -12,7 +12,7 @@ export default function Connect() {
         Get connected now
       </h2>
       <p
-        className="font-satoshi text-lg md:text-[20px] text-[#282928] leading-[30px]"
+        className="font-satoshi text-base xl:text-[20px] text-[#282928] leading-[30px]"
         style={{ fontFeatureSettings: "'pnum' on, 'lnum' on" }}
       >
         Our contact information is just a click away. Get in touch with us today and let’s start a conversation that could change the game!
@@ -21,16 +21,16 @@ export default function Connect() {
 
     <div className="flex flex-col gap-6 mb-10 mt-10 md:mt-0">
       <div className="flex items-center gap-4">
-        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F7F9F3] border border-[#EFEFEF] text-[#232423] text-lg">
+        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0000000A] border border-[#EFEFEF] text-[#232423] text-base lg:text-lg">
           <i className="fa-solid fa-phone"></i>
         </span>
-        <span className="font-satoshi text-[18px] font-medium text-[#282928]">+91 9847 017714</span>
+        <span className="font-satoshi text-[16px] lg:text-[18px] font-medium text-[#282928]">+91 9847 017714</span>
       </div>
       <div className="flex items-center gap-4">
-        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F7F9F3] border border-[#EFEFEF] text-[#232423] text-lg">
+        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0000000A] border border-[#EFEFEF] text-[#232423] text-base lg:text-lg">
           <i className="fa-solid fa-envelope"></i>
         </span>
-        <span className="font-satoshi text-[18px] font-medium text-[#282928]">highrangevalleyinfo@gmail.com</span>
+        <span className="font-satoshi text-[16px] lg:text-[18px] font-medium text-[#282928]">highrangevalleyinfo@gmail.com</span>
       </div>
     </div>
   </div>
@@ -72,7 +72,7 @@ export default function Connect() {
     </div>
     <button
       type="submit"
-      className="w-full h-[54px] rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-[18px] font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
+      className="w-full h-[40px] lg:h-[54px] rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-[16px] lg:text-[18px] font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
     >
       Submit
     </button>

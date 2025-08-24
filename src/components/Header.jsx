@@ -15,10 +15,10 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90  font-satoshi">
+      <div className="px-8 lg:px-20">
+        <div className="flex justify-between items-center h-17">
+          
           <div className="flex-shrink-0">
             <Link to="/">
               <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
