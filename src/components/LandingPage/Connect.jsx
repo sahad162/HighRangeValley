@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Connect() {
   return (
-   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-10 lg:px-20  pb-20  bg-[#F7F9F3]">
+   <section className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-10 lg:px-20  pb-20  bg-[#F7F9F3]" id="contact">
   <div className="flex flex-col justify-between   w-full ">
     <div className="space-y-6 mt-8">
       <h2

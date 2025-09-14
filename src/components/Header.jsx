@@ -1,44 +1,42 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, NavLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Product", href: "/product" },
-    { name: "Features", href: "/features" },
-    { name: "Marketplace", href: "/marketplace" },
-    { name: "Company", href: "/company" },
+    { name: "Home", href: "home" },
+    { name: "About us", href: "about" },
+    { name: "Products", href: "products" },
+    { name: "Testimonials", href: "testimonials" },
+    { name: "Contact", href: "contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90  font-satoshi">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 font-satoshi">
       <div className="px-8 lg:px-20">
         <div className="flex justify-between items-center h-17">
-          
           <div className="flex-shrink-0">
-            <Link to="/">
-              <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
-            </Link>
+            <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">
             {navigation.map((item) => (
-              <NavLink
+              <ScrollLink
                 key={item.name}
                 to={item.href}
-                className={({ isActive }) =>
-                  `text-sm font-medium ${
-                    isActive ? "text-black border-b-2 border-black pb-1" : "text-gray-700 hover:text-black"
-                  }`
-                }
+                smooth={true}
+                offset={-80} // adjust for navbar height
+                duration={500}
+                className="cursor-pointer text-sm font-medium text-gray-700 hover:text-black"
+                activeClass="text-black border-b-2 border-black pb-1"
+                spy={true}
               >
                 {item.name}
-              </NavLink>
+              </ScrollLink>
             ))}
           </nav>
 
@@ -63,9 +61,7 @@ export default function Header() {
       >
         <div className="fixed inset-0 z-50 bg-white p-6">
           <div className="flex items-center justify-between">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-              <img src="/logo.svg" alt="Logo" className="h-8" />
-            </Link>
+            <img src="/logo.svg" alt="Logo" className="h-8" />
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="text-gray-700 hover:text-black"
@@ -76,18 +72,19 @@ export default function Header() {
 
           <nav className="mt-8 space-y-4">
             {navigation.map((item) => (
-              <NavLink
+              <ScrollLink
                 key={item.name}
                 to={item.href}
+                smooth={true}
+                offset={-80}
+                duration={500}
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block text-lg ${
-                    isActive ? "text-black font-semibold" : "text-gray-700"
-                  }`
-                }
+                className="block text-lg cursor-pointer text-gray-700"
+                activeClass="text-black font-semibold"
+                spy={true}
               >
                 {item.name}
-              </NavLink>
+              </ScrollLink>
             ))}
           </nav>
         </div>

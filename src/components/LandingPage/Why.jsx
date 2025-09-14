@@ -24,7 +24,7 @@ function Why() {
   ];
   return (
     <div className='mb-12'>
-    <section className=' mt-5 '>
+    <section className=' mt-5 ' id='about'>
         <div className="max-w-5xl  mx-auto ">
             <h1 className=' text-center text-[1.8rem] md:text-[3rem] lg:text-[3rem] font-satoshi-medium'>Why Highrange Valley?</h1>
             <p className='text-sm px-4 lg:text-lg  text-center text-light font-satoshi text-[#282928] mt-5'>We are one of the <span className='font-satoshi-medium'>largest dealers of premium cardamom in Kerala</span>,<br />handpicked from the valleys of highrange, with unspoiled essence.</p>
