@@ -28,7 +28,7 @@ function Hero() {
 
               <a
                 className="px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
-                href="tel:+919876543210"
+                href="tel:+9847 017714"
               >
                 <i className="fa-solid fa-phone text-sm md:text-2xl"></i>
                 <span>Call now</span>
