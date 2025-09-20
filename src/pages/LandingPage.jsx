@@ -6,6 +6,7 @@ import Suppliers from '../components/LandingPage/Suppliers'
 import Hero from '../components/LandingPage/Hero'
 import Why from '../components/LandingPage/Why'
 import Gettoknow from '../components/LandingPage/Gettoknow'
+import Testimonial from '../components/LandingPage/Testimonial'
 function LandingPage() {
   return (
     <>
@@ -14,6 +15,7 @@ function LandingPage() {
     < Why/>
     < Gettoknow/>
     < Suppliers/>
+    <Testimonial/>
     <Connect/>
     < Footer/>  
     </>
