@@ -79,7 +79,7 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="max-w-[310px] md:min-w-[350px] lg:min-w-[380px] 
+              className="max-w-[290px] md:min-w-[350px] lg:min-w-[380px] 
                          md:max-w-[380px] bg-white rounded-xl border border-gray-200 
                          shadow-md flex flex-col justify-between p-6 flex-shrink-0"
             >
