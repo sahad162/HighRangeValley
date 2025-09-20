@@ -9,42 +9,16 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const images = Array.from(document.images); 
-    let loadedCount = 0;
+    // Just wait for 3 seconds
+    const timer = setTimeout(() => setLoading(false), 3000);
 
-    if (images.length === 0) {
-      const timer = setTimeout(() => setLoading(false), 2000);
-      return () => clearTimeout(timer);
-    }
-
-    const handleLoad = () => {
-      loadedCount += 1;
-      if (loadedCount === images.length) {
-        const timer = setTimeout(() => setLoading(false), 2000);
-        return () => clearTimeout(timer);
-      }
-    };
-
-    images.forEach((img) => {
-      if (img.complete) {
-        handleLoad(); 
-      } else {
-        img.addEventListener("load", handleLoad);
-        img.addEventListener("error", handleLoad); 
-      }
-    });
-
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", handleLoad);
-        img.removeEventListener("error", handleLoad);
-      });
-    };
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
     <>
       {loading && <Loader />}
+
       {!loading && (
         <Routes>
           <Route path="/" element={<LandingPage />} />
