@@ -26,7 +26,7 @@ export default function Products() {
     (product) => product.category === activeTab
   );
   return (
-    <section className="py-16 px-6 md:px-20 mb-20 bg-white" id="products">
+    <section className="py-20 px-10 md:px-20 mb-20 bg-white" id="products">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
         <div>
           <h2 className="text-2xl md:text-3xl font-satoshi-medium  text-gray-900">
