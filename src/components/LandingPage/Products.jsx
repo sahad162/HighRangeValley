@@ -26,7 +26,7 @@ export default function Products() {
     (product) => product.category === activeTab
   );
   return (
-    <section className="py-20 px-10 md:px-20 mb-20 bg-white" id="products">
+    <section className="py-20 px-8 md:px-20 mb-20 bg-white" id="products">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
         <div>
           <h2 className="text-2xl md:text-3xl font-satoshi-medium  text-gray-900">
@@ -38,7 +38,7 @@ export default function Products() {
             handpicked from the valleys of highrange, with unspoiled essence.
           </p>
         </div>
-        <button className="border border-[#161716]  md:w-100 rounded-full  py-2 text-gray-700 hover:bg-gray-100 transition">
+        <button className="border border-[#161716] w-full md:w-100 rounded-full  py-2 text-gray-700 hover:bg-gray-100 transition">
           <span className="font-satoshi text-[#161716]">View all products →</span> 
         </button>
       </div>
