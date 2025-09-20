@@ -38,7 +38,7 @@ export default function Products() {
             handpicked from the valleys of highrange, with unspoiled essence.
           </p>
         </div>
-        <button className="border border-[#161716] w-[50%] md:w-100 rounded-full  py-2 text-gray-700 hover:bg-gray-100 transition">
+        <button className="border border-[#161716]  md:w-100 rounded-full  py-2 text-gray-700 hover:bg-gray-100 transition">
           <span className="font-satoshi text-[#161716]">View all products →</span> 
         </button>
       </div>
