@@ -30,3 +30,15 @@
 @theme{
   --font-satoshiItalic:Satoshi-italic
 }
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
