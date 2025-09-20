@@ -62,7 +62,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 px-6 lg:px-20 max-w-8xl mx-auto" id="testimonials">
+    <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto" id="testimonials">
       <h2 className=" text-2xl  md:text-3xl font-medium font-satoshi-medium mb-12">
         Hear what our customers say’s
       </h2>
