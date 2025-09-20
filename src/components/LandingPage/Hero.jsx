@@ -9,8 +9,11 @@ function Hero() {
       <div className="px-5 sm:px-10 flex flex-col-reverse md:px-20 lg:grid lg:grid-cols-2 gap-4 ">
         <div className="px-4">
           <div className="heading  w-full font-satoshi-medium">
-            <h2 className="text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
+            <h2 className="hidden lg:block text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
              Empowering Global Spice<br />  Businesses With Premium <br />  Wholesale Supply
+            </h2>
+            <h2 className="block lg:hidden text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
+             Empowering Global <br /> Spice Businesses With <br /> Premium Wholesale Supply
             </h2>
             <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
              Partner with India’s No.1 spice exporter. Get exclusive wholesale rates, seamless logistics, and priority customer support for your bulk spice requirements.
@@ -28,7 +31,7 @@ function Hero() {
 
               <a
                 className="px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
-                href="tel:+9847 017714"
+                href="tel:+91 9847 017714"
               >
                 <i className="fa-solid fa-phone text-sm md:text-2xl"></i>
                 <span>Call now</span>
