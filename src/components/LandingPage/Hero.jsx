@@ -1,7 +1,8 @@
 import React from "react";
+
 function Hero() {
   return (
-    <section className=" bg-white relative mb-5 lg:mb-12    " id="home">
+    <section className=" bg-white relative mb-5 lg:mb-12" id="home">
       <div className="leaf relative top-5 -left-10">
         <img src="/top-left.png" alt="left-leaf" />
       </div>
@@ -9,11 +10,10 @@ function Hero() {
         <div className="px-4">
           <div className="heading  w-full font-satoshi-medium">
             <h2 className="text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
-              Awaken your senses <br /> with every sip and <br /> sprinkle
+             Empowering Global Spice<br />  Businesses With Premium <br />  Wholesale Supply
             </h2>
             <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
-              Handpicked from the valleys of highrange, our teas and spices
-              bring you the rich, unspoiled essence of the highlands.
+             Partner with India’s No.1 spice exporter. Get exclusive wholesale rates, seamless logistics, and priority customer support for your bulk spice requirements.
             </p>
             <div className="buttons mt-7 flex lg:justify-start justify-center  gap-3">
               <a
@@ -76,7 +76,7 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative lg:w-full lg:h-full  xl:w-[95%] h-[95%]  ">
+        <div className="relative -mt-10 lg:mt-10 lg:scale-110 xl:scale-100 xl:w-[95%] h-[95%]   ">
           <div
             className="absolute z-20 top-[25%] left-[13%] sm:top-[30%] sm:left-[20%] md:top-[25%] md:left-[20%] lg:top-[18%] lg:left-[10%] xl:top-27 xl:left-20
                   inline-block rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-4 
@@ -108,7 +108,7 @@ function Hero() {
 
   <div className="absolute w-full h-full inset-0 flex items-center justify-center">
     <img
-      src="/hero.png"
+      src="https://res.cloudinary.com/dyxqrqvfd/image/upload/v1758384834/hero_kdwrhp.png"
       alt=""
       className="scale-x-[-1] w-full h-full "
     />
