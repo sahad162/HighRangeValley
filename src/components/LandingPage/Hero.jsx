@@ -76,18 +76,18 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative -mt-15 lg:-mt-10 xl:-mt-30 lg:w-full lg:h-full  xl:w-[95%] h-[95%]">
+        <div className="relative lg:w-full lg:h-full  xl:w-[95%] h-[95%]  ">
           <div
-            className="absolute z-20 top-[25%] left-[13%] sm:top-[30%] sm:left-[20%] md:top-[25%] md:left-[20%] lg:top-[18%] lg:left-[10%] xl:top-40 xl:left-20
+            className="absolute z-20 top-[25%] left-[13%] sm:top-[30%] sm:left-[20%] md:top-[25%] md:left-[20%] lg:top-[18%] lg:left-[10%] xl:top-27 xl:left-20
                   inline-block rounded-2xl px-2 py-1 sm:px-3 sm:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-4 
                   bg-white/10 backdrop-blur-md border border-white/20 shadow-lg font-satoshiItalic"
           >
             <p className="text-gray-700 font-medium text-xs sm:text-sm  xl:text-lg">
               <span className="ms-5">
                 India&apos;s{" "}
-                <span className="bg-[linear-gradient(96.3deg,_#EA9E35_48.42%,_rgba(221,169,55,0.8)_74.76%)] bg-clip-text text-transparent">
+               
                   No.1
-                </span>
+             
               </span>{" "}
               <br />
               <span className="text-[#639B4B]">Wholesale & Retail</span> <br />
@@ -102,9 +102,19 @@ function Hero() {
                   bg-[radial-gradient(circle,_#D4E157_0%,_#1D6D21_40%,_rgba(29,109,33,0.3)_60%,_transparent_100%)]"
           ></div>
 
-          <div className="relative z-10   w-full h-full">
-            <img src="/left-image-fd.svg" alt="" />
-          </div>
+      <div className="relative z-10 ">
+  
+  <img src="/bg_hero.png" alt="" className="w-full h-full object-cover -translate-y-8  md:-translate-y-15 " />
+
+  <div className="absolute w-full h-full inset-0 flex items-center justify-center">
+    <img
+      src="/hero.png"
+      alt=""
+      className="scale-x-[-1] w-full h-full "
+    />
+  </div>
+</div>
+
         </div>
       </div>
     </section>
