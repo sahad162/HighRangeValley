@@ -71,8 +71,8 @@ function Gettoknow() {
 
 
       <div className="mobile lg:hidden">
-          <div className=" flex justify-center mb-5">
-        <div className="max-w-xs sm:max-w-md md:max-w-lg  bg-white/95 p-6 rounded-2xl shadow-xl ">
+          <div className=" flex justify-center mb-5 px-4">
+        <div className="  bg-white/95 p-6 rounded-2xl shadow-xl ">
             <h2 className="text-xl font-medium font-satoshi-medium text-gray-900 mb-4">
         Get to know us
       </h2>
