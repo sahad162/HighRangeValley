@@ -1,30 +1,28 @@
 import React from 'react'
 import { useState } from 'react';
-import { IndianRupee } from 'lucide-react';
+import { IndianRupee,SlidersHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
 const products = [
-  { id: 1, name: "Cardamom", img: "/p3.jpg", category: "Signature Products" },
-  { id: 2, name: "Pepper", img: "/p2.jpg", category: "Signature Products" },
-  { id: 3, name: "Star Anise", img: "/p1.jpg", category: "Signature Products" },
-  { id: 4, name: "Star Anise", img: "/p1.jpg", category: "Wholesale products" },
+  { id: 1, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
+  { id: 2, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
+  { id: 3, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
+  { id: 4, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
   { id: 5, name: "Pepper", img: "/p2.jpg", category: "Retail products" },
-  { id: 6, name: "Cardamom", img: "/p3.jpg", category: "Dry Fruits" },
-  { id: 7, name: "Cardamom", img: "/p3.jpg", category: "Signature Products" },
-  { id: 8, name: "Pepper", img: "/p2.jpg", category: "Signature Products" },
-  { id: 9, name: "Star Anise", img: "/p1.jpg", category: "Signature Products" },
+  { id: 6, name: "Cardamom", img: "/p3.jpg", category: "Retail products" },
+  { id: 7, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
+  { id: 8, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
+  { id: 9, name: "Star Anise", img: "/p1.jpg", category: "Retail products" },
 ];
 
 const tabs = [
-  "Signature Products",
-  "Dry Fruits",
-  "Wholesale products",
+  "Wholesale Products",
   "Retail products",
 ];
 
 function ProductsPage() {
-  const [activeTab,setActiveTab]=useState("Signature Products");
+  const [activeTab,setActiveTab]=useState("Wholesale Products");
   const filteredProducts = products.filter(
       (product) => product.category === activeTab
     );
@@ -73,7 +71,8 @@ function ProductsPage() {
 
 <section className='bg-white py-25 lg:py-40'>
             
-<div className="flex gap-3 mb-10 px-8 lg:px-20 overflow-x-auto hide-scrollbar">
+<div className="flex justify-between gap-3 mb-10 px-8 lg:px-20 overflow-x-auto hide-scrollbar">
+  <div className='flex gap-3'>
   {tabs.map((tab) => (
   <button
     key={tab}
@@ -85,7 +84,7 @@ function ProductsPage() {
     }`}
   >
       {activeTab === tab ? (
-        <span className=" bg-clip-text md:text-base text-sm text-white">
+        <span className=" bg-clip-text md:text-base sm:text-sm text-xs text-white">
           {tab}
         </span>
       ) : (
@@ -93,6 +92,11 @@ function ProductsPage() {
       )}
     </button>
   ))}
+  </div>
+   <div className="filter flex gap-2 me-0 xl:me-15  items-center ">
+      <SlidersHorizontal className="w-4 h-4" />
+    <span className="hidden md:block font-satoshi text-black">Filter by </span>
+  </div>
 </div>
 
     
