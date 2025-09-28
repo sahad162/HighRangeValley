@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import Profile from "./pages/Profile";
 import PageNotFound from "./pages/PageNotFound";
 import Loader from "./components/Loader";
+import ProductsPage from "./pages/ProductsPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import IndividualPage from "./pages/IndividualPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Just wait for 3 seconds
     const timer = setTimeout(() => setLoading(false), 3000);
-
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -20,11 +21,16 @@ function App() {
       {loading && <Loader />}
 
       {!loading && (
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+        <>
+          <Header />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/product" element={< IndividualPage />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          <Footer />
+        </>
       )}
     </>
   );

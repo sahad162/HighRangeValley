@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const products = [
   { id: 1, name: "Cardamom", img: "/p3.jpg", category: "Signature Products" },
@@ -38,9 +39,9 @@ export default function Products() {
             handpicked from the valleys of highrange, with unspoiled essence.
           </p>
         </div>
-        <button className="border border-[#161716] w-full md:w-100 rounded-full  py-2 text-gray-700 hover:bg-gray-100 transition">
-          <span className="font-satoshi text-[#161716]">View all products →</span> 
-        </button>
+        <Link to="/products"  className="border border-[#161716]  rounded-full  px-2 py-2 text-gray-700 hover:bg-gray-100 transition">
+          <span className="font-satoshi  text-[#161716]">View all products →</span> 
+        </Link>
       </div>
 
      
@@ -81,7 +82,7 @@ export default function Products() {
           <div className="absolute inset-0 bg-[#FAFCFB1A]"></div>
       </div>
 
-      {/* Name outside card */}
+     
       <div className="mt-3  w-full ">
         <h3 className="text-lg font-medium font-satoshi-medium text-gray-800">
           {product.name}

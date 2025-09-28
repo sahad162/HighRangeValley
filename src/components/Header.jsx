@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
+
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +21,8 @@ export default function Header() {
       <div className="px-8 lg:px-20">
         <div className="flex justify-between items-center h-17">
           <div className="flex-shrink-0">
-            <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+            <Link to="/">
+            <img src="/logo.svg" alt="Logo" className="h-8 w-auto" /></Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -29,7 +32,7 @@ export default function Header() {
                 key={item.name}
                 to={item.href}
                 smooth={true}
-                offset={-80} // adjust for navbar height
+                offset={-80} 
                 duration={500}
                 className="cursor-pointer text-sm font-medium text-gray-700 hover:text-black"
                 activeClass="text-black border-b-2 border-black pb-1"
