@@ -11,7 +11,6 @@ import Products from '../components/LandingPage/Products'
 function LandingPage() {
   return (
     <>
-    < Header/>
     < Hero/>
     < Why/>
     < Gettoknow/>
@@ -19,7 +18,6 @@ function LandingPage() {
     < Suppliers/>
     <Testimonial/>
     <Connect/>
-    < Footer/>  
     </>
   )
 }
