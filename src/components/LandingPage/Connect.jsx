@@ -6,7 +6,7 @@ export default function Connect() {
   <div className="flex flex-col justify-between   w-full ">
     <div className="space-y-6 mt-8">
       <h2
-        className="font-satoshi font-medium text-4xl md:text-[3em] leading-tight text-[#141414]"
+        className="font-satoshi font-medium text-4xl md:text-[3rem] leading-tight text-[#141414]"
         style={{ fontFeatureSettings: "'pnum' on, 'lnum' on" }}
       >
         Get connected now
