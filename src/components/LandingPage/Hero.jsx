@@ -6,10 +6,10 @@ function Hero() {
       <div className="leaf relative top-5 -left-10">
         <img src="/top-left.png" alt="left-leaf" />
       </div>
-      <div className="px-5 sm:px-10 flex flex-col-reverse md:px-20 lg:grid lg:grid-cols-2 gap-4 ">
+      <div className="px-5 sm:px-10  flex flex-col-reverse md:px-20 lg:grid lg:grid-cols-2 gap-4 ">
         <div className="px-4">
           <div className="heading  w-full font-satoshi-medium">
-            <h2 className="hidden lg:block text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
+            <h2 className="hidden lg:block text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3.3rem] leading-tight font-[500]">
              Empowering Global Spice<br />  Businesses With Premium <br />  Wholesale Supply
             </h2>
             <h2 className="block lg:hidden text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
@@ -101,7 +101,7 @@ function Hero() {
           </div>
 
           <div
-            className="absolute inset-0 rounded-full opacity-60 blur-[100px] 
+            className="absolute inset-0 rounded-full  opacity-60 blur-[100px] 
                   bg-[radial-gradient(circle,_#D4E157_0%,_#1D6D21_40%,_rgba(29,109,33,0.3)_60%,_transparent_100%)]"
           ></div>
 

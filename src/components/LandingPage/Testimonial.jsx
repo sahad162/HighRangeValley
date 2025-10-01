@@ -63,7 +63,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto" id="testimonials">
-      <h2 className=" text-2xl  md:text-3xl font-medium font-satoshi-medium mb-12">
+      <h2 className=" text-2xl  md:text-[3rem] l font-medium font-satoshi-medium mb-12">
         Hear what our customers say’s
       </h2>
 
@@ -84,7 +84,7 @@ export default function Testimonials() {
                          shadow-md flex flex-col justify-between p-6 flex-shrink-0"
             >
               <span className="text-6xl text-black">“</span>
-              <p className="text-[#282928] text-sm md:text-base leading-relaxed text-center font-satoshi flex-1">
+              <p className="text-[#282928] text-sm md:text-[1.2rem] leading-relaxed text-center font-satoshi flex-1">
                 {t.text}
               </p>
 

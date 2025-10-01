@@ -29,10 +29,10 @@ export default function Products() {
     <section className="py-20 px-8 lg:px-20 mb-20 bg-white" id="products">
  <div className="flex lg:max-w-7xl   flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
   <div>
-    <h2 className="text-2xl md:text-3xl font-satoshi-medium text-gray-900">
+    <h2 className="text-[2rem] md:text-[3rem] font-satoshi-medium text-gray-900">
       Explore Our Products
     </h2>
-    <p className="mt-9 font-satoshi text-gray-600 max-w-xl">
+    <p className="mt-9 font-satoshi text-[1.1rem] text-gray-600 max-w-xl">
       We are one of the largest dealers of{" "}
       <span className="font-semibold">premium cardamom in Kerala</span>,
       handpicked from the valleys of highrange, with unspoiled essence.
@@ -83,7 +83,7 @@ export default function Products() {
 
 
       
-   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 xl:gap-0 ">
+   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 xl:gap-6 ">
   {filteredProducts.map((product) => (
     <div key={product.id} className="flex flex-col ">
       <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-[80%] shadow-sm  overflow-hidden hover:shadow-sm transition md:h-100">
