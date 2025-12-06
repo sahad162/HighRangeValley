@@ -1,16 +1,22 @@
 import React from "react";
 import { Phone, Mail } from "lucide-react";
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useProductDetail } from "../hooks/useProduct";
+import { baseURL } from "../services/baseURL";
 
 const IndividualPage = () => {
+  const{id}=useParams();
+  const {data}=useProductDetail(id);
+  console.log(data);
+  
   return (
     <section className="min-h-screen  bg-white flex items-center justify-center py-20 lg:px-6">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 bg-white p-8 rounded-2xl ">
         <div>
           <div className="relative  h-[400px] w-full">
             <img
-              src="/p3.jpg"
+              src={`${baseURL}${data?.image}`}
               alt="Cardamom"
               className="rounded-xl  object-cover w-full h-full"
             />
@@ -20,17 +26,17 @@ const IndividualPage = () => {
           </div>
           <div className="grid grid-cols-3 gap-4 mt-6">
             <img
-              src="/p3.jpg"
+               src={`${baseURL}${data?.image}`}
               alt="Thumb 1"
               className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
             />
             <img
-              src="/p3.jpg"
+               src={`${baseURL}${data?.image}`}
               alt="Thumb 2"
               className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
             />
             <img
-              src="/p3.jpg"
+               src={`${baseURL}${data?.image}`}
               alt="Thumb 3"
               className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
             />
@@ -43,10 +49,10 @@ const IndividualPage = () => {
           </span>
           <div className="title flex justify-between">
             <h1 className="text-3xl font-medium font-satoshi-medium">
-              Cardamom
+              {data?.name}
             </h1>
             <p className="text-xl font-semibold font-satoshi-medium text-gray-800 mt-1">
-              ₹ 2910 <span className="text-base font-satoshi">/Kg</span>
+              ₹ {data?.actual_price} <span className="text-base font-satoshi">/Kg</span>
             </p>
           </div>
 

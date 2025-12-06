@@ -1,30 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { IndianRupee, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCategories,useProducts } from '../hooks/useProduct';
+import { baseURL } from '../services/baseURL';
 
-const products = [
-  { id: 1, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
-  { id: 2, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
-  { id: 3, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
-  { id: 4, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
-  { id: 5, name: "Pepper", img: "/p2.jpg", category: "Retail products" },
-  { id: 6, name: "Cardamom", img: "/p3.jpg", category: "Retail products" },
-  { id: 7, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
-  { id: 8, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
-  { id: 9, name: "Star Anise", img: "/p1.jpg", category: "Retail products" },
-];
 
-const tabs = ["Wholesale Products", "Retail products"];
+
+
+
 
 function ProductsPage() {
-  const [activeTab, setActiveTab] = useState("Wholesale Products");
+  const [activeTab, setActiveTab] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const {data:categories}=useCategories();
+  const {data:products=[]}=useProducts();
+  console.log(products);
+  
+
+    useEffect(()=>{
+      if(categories?.length>0){
+        setActiveTab(categories[0]);
+      }
+      
+    },[categories]);
 
   // Filter products by tab + search
   const filteredProduct = products.filter(
     (product) =>
-      product.category === activeTab &&
-      product.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+      product.categories?.some(cat => cat.id === activeTab?.id) &&
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -71,25 +76,25 @@ function ProductsPage() {
         <div className="flex justify-between gap-3 mb-10 px-8 lg:px-20 overflow-x-auto hide-scrollbar">
           {/* Tabs */}
           <div className="flex gap-3">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`shrink-0 px-3 md:px-4 py-2 rounded-full font-medium font-satoshi-medium transition-colors duration-300 ${
-                  activeTab === tab
-                    ? "bg-gradient-to-r from-[#88B158] via-[#88B158] to-[#146B2D] text-white"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                {activeTab === tab ? (
-                  <span className="bg-clip-text md:text-base sm:text-sm text-xs text-white">
-                    {tab}
-                  </span>
-                ) : (
-                  tab
-                )}
-              </button>
-            ))}
+            {categories?.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab)}
+              className={`shrink-0 px-3 md:text-base sm:text-sm text-sm md:px-4 py-2 rounded-full font-medium font-satoshi-medium transition-colors duration-300 ${
+                activeTab?.id === tab.id
+                  ? "bg-gradient-to-r from-[#88B158] via-[#88B158] to-[#146B2D] text-white"
+                  : "text-gray-600 hover:bg-gray-100"
+              }`}
+            >
+              {activeTab?.id === tab.id ? (
+                <span className="bg-clip-text md:text-base sm:text-sm text-sm text-white">
+                  {tab.name}
+                </span>
+              ) : (
+                tab.name
+              )}
+            </button>
+          ))}
           </div>
 
           {/* Search */}
@@ -108,10 +113,10 @@ function ProductsPage() {
         <div className="px-8 gap-6 lg:px-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {filteredProduct.length > 0 ? (
             filteredProduct.map((product) => (
-              <Link key={product.id} to={'/product'} className="flex flex-col">
+              <Link key={product.id} to={`/product/${product.id}`} className="flex flex-col">
                 <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
                   <img
-                    src={product.img}
+                    src={`${baseURL}${product.image}`}
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />
@@ -120,16 +125,16 @@ function ProductsPage() {
 
                 <div className="mt-3 flex flex-col sm:flex-row justify-between w-full items-start sm:items-center">
                   <h3 className="text-sm sm:text-base lg:text-lg font-medium font-satoshi-medium text-gray-800">
-                    {product.name}
+                    {product?.name}
                   </h3>
 
-                  <div className="mt-2 sm:mt-0 flex items-center gap-2 ">
+                  <div className="mt-2 sm:mt-0 flex items-center gap-1 ">
                     <span className="text-[#0D7E2D] text-[10px] sm:text-sm lg:text-base font-satoshi-medium">
-                      10% OFF
+                      {product?.offer_percentage}% OFF
                     </span>
                     <span className="flex items-center text-xs sm:text-sm lg:text-base font-satoshi-medium">
-                      <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 mr-1" />
-                      740
+                      <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
+                      {product?.price}
                     </span>
                   </div>
                 </div>
