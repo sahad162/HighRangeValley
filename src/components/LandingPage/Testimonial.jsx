@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-import { useReviews } from "../../hooks/usereviews";
+import useRev from "../../hooks/useRev";
+
 import SkeletonCard from "../SkeletonCard";
 
 export default function Testimonials() {
   const scrollRef = useRef(null);
-  const { data, isLoading, isError } = useReviews();
+  const { data, isLoading, isError } = useRev();
 
   let isDown = false;
   let startX;
