@@ -1,29 +1,32 @@
-import React, { useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
+import { useCategories, useProducts } from "../../hooks/useProduct";
 
-const products = [
-  { id: 1, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
-  { id: 2, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
-  { id: 3, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
-  { id: 4, name: "Star Anise", img: "/p1.jpg", category: "Wholesale Products" },
-  { id: 5, name: "Pepper", img: "/p2.jpg", category: "Retail products" },
-  { id: 6, name: "Cardamom", img: "/p3.jpg", category: "Retail products" },
-  { id: 7, name: "Cardamom", img: "/p3.jpg", category: "Wholesale Products" },
-  { id: 8, name: "Pepper", img: "/p2.jpg", category: "Wholesale Products" },
-  { id: 9, name: "Star Anise", img: "/p1.jpg", category: "Retail products" },
-];
 
-const tabs = ["Wholesale Products", "Retail products"];
+
 
 export default function Products() {
-  const [activeTab, setActiveTab] = useState("Wholesale Products");
+  const [activeTab, setActiveTab] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const {data:categories}=useCategories();
+  const {data:products=[]}=useProducts();
+  
+  
+
+  useEffect(()=>{
+    if(categories?.length>0){
+      setActiveTab(categories[0]);
+    }
+    
+  },[categories]);
+
+  
   // Filter products by tab + search
   const filteredProducts = products.filter(
     (product) =>
-      product.category === activeTab &&
+      product.categories?.some(cat => cat.id === activeTab?.id) &&
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -56,29 +59,29 @@ export default function Products() {
       <div className="flex justify-between  gap-3 mb-10 overflow-x-auto hide-scrollbar">
         {/* Tabs */}
         <div className="flex gap-3">
-          {tabs.map((tab) => (
+          {categories?.map((tab) => (
             <button
-              key={tab}
+              key={tab.id}
               onClick={() => setActiveTab(tab)}
               className={`shrink-0 px-3 md:text-base sm:text-sm text-sm md:px-4 py-2 rounded-full font-medium font-satoshi-medium transition-colors duration-300 ${
-                activeTab === tab
+                activeTab?.id === tab.id
                   ? "bg-gradient-to-r from-[#88B158] via-[#88B158] to-[#146B2D] text-white"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
-              {activeTab === tab ? (
+              {activeTab?.id === tab.id ? (
                 <span className="bg-clip-text md:text-base sm:text-sm text-sm text-white">
-                  {tab}
+                  {tab.name}
                 </span>
               ) : (
-                tab
+                tab.name
               )}
             </button>
           ))}
         </div>
 
         {/* Search bar */}
-        <div className="relative ">
+        <div className="relative hidden md-block">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 font-bold text-black" />
           <input
             type="text"
@@ -94,11 +97,11 @@ export default function Products() {
       {/* Product Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 xl:gap-6">
         {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
+          filteredProducts.slice(0,6).map((product) => (
             <div key={product.id} className="flex flex-col">
               <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
                 <img
-                  src={product.img}
+                  src={product.images[0].image}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />

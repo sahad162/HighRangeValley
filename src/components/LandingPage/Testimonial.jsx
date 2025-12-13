@@ -1,34 +1,11 @@
 import React, { useRef } from "react";
-
-const testimonials = [
-  {
-    text: `"Exceptional Quality and Service!"
-    "We've been sourcing spices from Highrange Valley for years, and the quality never fails to impress."`,
-    name: "Seena Ponnachan",
-    img: "/testpng.png",
-  },
-  {
-    text: `"Consistent and Reliable!"
-    Our business relies on consistent quality and timely shipments."`,
-    name: "Seena Ponnachan",
-    img: "/testpng.png",
-  },
-  {
-    text: `"Our Go-To Wholesale Supplier!"
-    Highrange Valley offers premium spices with excellent service."`,
-    name: "Seena Ponnachan",
-    img: "/testpng.png",
-  },
-  {
-    text: `"Amazing Experience!"
-    Always quick responses and professional handling of our needs."`,
-    name: "Seena Ponnachan",
-    img: "/testpng.png",
-  },
-];
+import { useReviews } from "../../hooks/usereviews";
+import SkeletonCard from "../SkeletonCard";
 
 export default function Testimonials() {
   const scrollRef = useRef(null);
+  const { data, isLoading, isError } = useReviews();
+
   let isDown = false;
   let startX;
   let scrollLeft;
@@ -57,45 +34,88 @@ export default function Testimonials() {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5; 
+    const walk = (x - startX) * 1.5;
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  if (isLoading) {
+    return (
+      <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto">
+        <h2 className="text-2xl md:text-[3rem] font-medium mb-12">
+          Hear what our customers say
+        </h2>
+
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto hide-scrollbar cursor-grab select-none"
+        >
+          <div className="flex gap-6">
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (isError) {
+    return (
+      <section className="py-20 px-10 lg:px-20 text-red-600">
+        Failed to load testimonials.
+      </section>
+    );
+  }
+
+  if (!data || data.length === 0) {
+    return (
+      <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto">
+        <h2 className="text-2xl md:text-[3rem] font-medium font-satoshi-medium mb-12">
+          Hear what our customers say’s
+        </h2>
+        <div className="text-center">No testimonials available.</div>
+      </section>
+    );
+  }
+
   return (
-    <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto" id="testimonials">
-      <h2 className=" text-2xl  md:text-[3rem] l font-medium font-satoshi-medium mb-12">
+    <section
+      className="py-20 px-10 lg:px-20 max-w-8xl  mx-auto"
+      id="testimonials"
+    >
+      <h2 className="text-2xl md:text-[3rem] font-medium font-satoshi-medium mb-12">
         Hear what our customers say’s
       </h2>
 
       <div
         ref={scrollRef}
-        className="overflow-x-auto hide-scrollbar  smooth-scroll  cursor-grab select-none"
+        className="overflow-x-auto hide-scrollbar cursor-grab select-none"
         onMouseDown={onMouseDown}
         onMouseLeave={onMouseLeave}
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}
       >
-        <div className="flex gap-6">
-          {testimonials.map((t, index) => (
+        <div className="flex py-2 px-2 gap-6">
+          {data.map((t) => (
             <div
-              key={index}
+              key={t.id}
               className="max-w-[290px] md:min-w-[350px] lg:min-w-[380px] 
-                         md:max-w-[380px] bg-white rounded-xl border border-gray-200 
+                         bg-white rounded-xl border border-gray-200 
                          shadow-md flex flex-col justify-between p-6 flex-shrink-0"
             >
               <span className="text-6xl text-black">“</span>
+
               <p className="text-[#282928] text-sm md:text-[1.2rem] leading-relaxed text-center font-satoshi flex-1">
-                {t.text}
+                {t.comment}
               </p>
 
               <div className="flex items-center gap-3 mt-4">
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  className="w-8 h-8 rounded-full object-cover"
-                />
+                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#7ec850] to-[#2e7d32] text-white flex items-center justify-center text-xl font-bold">
+                  {t.customer_name.charAt(0).toUpperCase()}
+                </div>
                 <span className="text-sm lg:text-base font-satoshi font-medium">
-                  {t.name}
+                  {t.customer_name}
                 </span>
               </div>
             </div>
