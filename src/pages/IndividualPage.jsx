@@ -1,45 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone, Mail } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { useProductDetail } from "../hooks/useProduct";
-import { baseURL } from "../services/baseURL";
 
 const IndividualPage = () => {
-  const{id}=useParams();
-  const {data}=useProductDetail(id);
-  console.log(data);
-  
+  const { id } = useParams();
+  const { data } = useProductDetail(id);
+  const [current, setCurrent] = useState(0);
+  const images = data?.images || [];
+
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const selectImage = (index) => {
+    setCurrent(index);
+  };
+
   return (
     <section className="min-h-screen  bg-white flex items-center justify-center py-20 lg:px-6">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 bg-white p-8 rounded-2xl ">
         <div>
           <div className="relative  h-[400px] w-full">
             <img
-              src={`${baseURL}${data?.image}`}
+              key={current}
+              src={images[current]?.image}
               alt="Cardamom"
-              className="rounded-xl  object-cover w-full h-full"
+              className="rounded-xl  object-cover w-full h-full animate-slideIn"
             />
-            <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 rounded-full shadow-md p-2">
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 rounded-full shadow-md p-2"
+              onClick={next}
+            >
               <ChevronRight className="w-5 h-5 text-black/50" />
             </button>
           </div>
           <div className="grid grid-cols-3 gap-4 mt-6">
-            <img
-               src={`${baseURL}${data?.image}`}
-              alt="Thumb 1"
-              className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
-            />
-            <img
-               src={`${baseURL}${data?.image}`}
-              alt="Thumb 2"
-              className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
-            />
-            <img
-               src={`${baseURL}${data?.image}`}
-              alt="Thumb 3"
-              className="w-40 h-40 object-cover rounded-xl  cursor-pointer"
-            />
+            {images.map((img, index) => (
+              <img
+                key={img.id}
+                src={img.image}
+                alt={`Thumb ${index}`}
+                onClick={() => selectImage(index)}
+                className={`w-full h-32 object-cover rounded-xl cursor-pointer border-2 border-transparent`}
+              />
+            ))}
           </div>
         </div>
 
@@ -52,7 +58,8 @@ const IndividualPage = () => {
               {data?.name}
             </h1>
             <p className="text-xl font-semibold font-satoshi-medium text-gray-800 mt-1">
-              ₹ {data?.actual_price} <span className="text-base font-satoshi">/Kg</span>
+              ₹ {data?.actual_price}{" "}
+              <span className="text-base font-satoshi">/Kg</span>
             </p>
           </div>
 
@@ -60,9 +67,7 @@ const IndividualPage = () => {
             Product Details
           </h2>
           <p className="text-gray-600 mt-2 leading-relaxed font-satoshi text-justify">
-            Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Ed Ultrices
-            Tellus, Pretium Ut Sed Scelerisque Sit Vitae Eget. In Laoreet Odio
-            Sed Fermentum Ut Aliquam Proin Dictumst Massa.
+            {data?.details}
           </p>
 
           <div className="mt-16 flex flex-col  gap-4">
@@ -70,7 +75,10 @@ const IndividualPage = () => {
               <span className="font-satoshi-medium">Buy Now</span>
             </button>
 
-            <Link to="/" className="flex-1 flex justify-center items-center border border-[#1A6F2F] py-3 rounded-full font-medium transition">
+            <Link
+              to="/"
+              className="flex-1 flex justify-center items-center border border-[#1A6F2F] py-3 rounded-full font-medium transition"
+            >
               <span className="font-satoshi-medium text-transparent bg-clip-text bg-gradient-to-r from-[#88B158] to-[#146B2D]">
                 Connect us
               </span>

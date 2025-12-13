@@ -2,12 +2,6 @@ import React, { useState,useEffect } from 'react';
 import { IndianRupee, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCategories,useProducts } from '../hooks/useProduct';
-import { baseURL } from '../services/baseURL';
-
-
-
-
-
 
 function ProductsPage() {
   const [activeTab, setActiveTab] = useState(null);
@@ -15,7 +9,6 @@ function ProductsPage() {
 
   const {data:categories}=useCategories();
   const {data:products=[]}=useProducts();
-  console.log(products);
   
 
     useEffect(()=>{
@@ -116,7 +109,7 @@ function ProductsPage() {
               <Link key={product.id} to={`/product/${product.id}`} className="flex flex-col">
                 <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
                   <img
-                    src={`${baseURL}${product.image}`}
+                    src={product.images[0].image}
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />

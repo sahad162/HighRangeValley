@@ -36,3 +36,21 @@
   }
 }
 
+@layer utilities {
+  @keyframes slideIn {
+    from {
+      transform: translateX(30px);
+      opacity: 0.8;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.35s ease-out;
+  }
+}
+
+

@@ -2,7 +2,7 @@ import React, {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { useCategories, useProducts } from "../../hooks/useProduct";
-import { baseURL } from "../../services/baseURL";
+
 
 
 
@@ -81,7 +81,7 @@ export default function Products() {
         </div>
 
         {/* Search bar */}
-        <div className="relative ">
+        <div className="relative hidden md-block">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 font-bold text-black" />
           <input
             type="text"
@@ -101,7 +101,7 @@ export default function Products() {
             <div key={product.id} className="flex flex-col">
               <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
                 <img
-                  src={`${baseURL}${product.image}`}
+                  src={product.images[0].image}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
