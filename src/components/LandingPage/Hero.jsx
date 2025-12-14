@@ -1,14 +1,12 @@
-import React from "react";
-
 function Hero() {
   return (
     <section className=" bg-white relative mb-5 lg:mb-12" id="home">
       <div className="leaf relative top-5 -left-10">
         <img src="/top-left.png" alt="left-leaf" />
       </div>
-      <div className="px-5 sm:px-10  flex flex-col-reverse md:px-20 lg:grid lg:grid-cols-2 gap-4 ">
+      <div className="px-5 sm:px-10   flex flex-col-reverse md:px-5 lg:px-20 lg:grid lg:grid-cols-2 gap-4 ">
         <div className="px-4">
-          <div className="heading  w-full font-satoshi-medium">
+          <div className="heading   w-full font-satoshi-medium">
             <h2 className="hidden lg:block text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3.3rem] leading-tight font-[500]">
              Empowering Global Spice<br />  Businesses With Premium <br />  Wholesale Supply
             </h2>
@@ -18,19 +16,19 @@ function Hero() {
             <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
              Partner with India’s No.1 spice exporter. Get exclusive wholesale rates, seamless logistics, and priority customer support for your bulk spice requirements.
             </p>
-            <div className="buttons mt-7 flex lg:justify-start justify-center  gap-3">
+            <div className="buttons mt-7 flex lg:justify-start   gap-3">
               <a
                 href="https://wa.me/message/JYTUT2TUVM7MH1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-2 items-center px-3 py-3 lg:px-4 lg:py-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
+                className="flex gap-2 justify-center items-center w-full lg:w-45 px-3 py-3 lg:px-4 lg:py-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
               >
                 <i className="fa-brands fa-whatsapp text-sm md:text-2xl"></i>
                 <span>Connect now</span>
               </a>
 
               <a
-                className="px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
+                className="w-full justify-center lg:w-45 px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
                 href="tel:+91 9847 017714"
               >
                 <i className="fa-solid fa-phone text-sm md:text-2xl"></i>
@@ -111,9 +109,9 @@ function Hero() {
 
   <div className="absolute w-full h-full inset-0 flex items-center justify-center">
     <img
-      src="https://res.cloudinary.com/dyxqrqvfd/image/upload/v1758384834/hero_kdwrhp.png"
+      src="/bg-image/hero-bg.webp"
       alt=""
-      className="scale-x-[-1] w-full h-full "
+      className="w-full h-full "
     />
   </div>
 </div>

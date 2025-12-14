@@ -1,32 +1,25 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { useCategories, useProducts } from "../../hooks/useProduct";
-
-
-
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const {data:categories}=useCategories();
-  const {data:products=[]}=useProducts();
-  
-  
+  const { data: categories } = useCategories();
+  const { data: products = [] } = useProducts();
 
-  useEffect(()=>{
-    if(categories?.length>0){
+  useEffect(() => {
+    if (categories?.length > 0) {
       setActiveTab(categories[0]);
     }
-    
-  },[categories]);
+  }, [categories]);
 
-  
   // Filter products by tab + search
   const filteredProducts = products.filter(
     (product) =>
-      product.categories?.some(cat => cat.id === activeTab?.id) &&
+      product.categories?.some((cat) => cat.id === activeTab?.id) &&
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -97,22 +90,24 @@ export default function Products() {
       {/* Product Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 xl:gap-6">
         {filteredProducts.length > 0 ? (
-          filteredProducts.slice(0,6).map((product) => (
-            <div key={product.id} className="flex flex-col">
-              <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
-                <img
-                  src={product.images[0].image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-[#FAFCFB1A]"></div>
+          filteredProducts.slice(0, 6).map((product) => (
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <div key={product.id} className="flex flex-col">
+                <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
+                  <img
+                    src={product.images[0].image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-[#FAFCFB1A]"></div>
+                </div>
+                <div className="mt-3 w-full">
+                  <h3 className="text-lg font-medium font-satoshi-medium text-gray-800">
+                    {product.name}
+                  </h3>
+                </div>
               </div>
-              <div className="mt-3 w-full">
-                <h3 className="text-lg font-medium font-satoshi-medium text-gray-800">
-                  {product.name}
-                </h3>
-              </div>
-            </div>
+            </Link>
           ))
         ) : (
           <p className="col-span-full text-center text-gray-500">
