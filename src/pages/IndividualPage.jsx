@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Phone, Mail } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -9,6 +9,10 @@ const IndividualPage = () => {
   const { data } = useProductDetail(id);
   const [current, setCurrent] = useState(0);
   const images = data?.images || [];
+  
+  useEffect(() => {
+  window.scrollTo(0, 0);
+}, [id]);
 
   const next = () => {
     setCurrent((prev) => (prev + 1) % images.length);

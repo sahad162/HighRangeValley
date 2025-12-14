@@ -9,6 +9,11 @@ function ProductsPage() {
 
   const {data:categories}=useCategories();
   const {data:products=[]}=useProducts();
+
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   
 
     useEffect(()=>{

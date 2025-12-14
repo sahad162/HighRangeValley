@@ -101,13 +101,13 @@ export default function Testimonials() {
           {data.map((t) => (
             <div
               key={t.id}
-              className="max-w-[290px] md:min-w-[350px] lg:min-w-[380px] 
+              className="max-w-[285px] md:min-w-[350px] lg:min-w-[380px] 
                          bg-white rounded-xl border border-gray-200 
                          shadow-md flex flex-col justify-between p-6 flex-shrink-0"
             >
               <span className="text-6xl text-black">“</span>
 
-              <p className="text-[#282928] text-sm md:text-[1.2rem] leading-relaxed text-center font-satoshi flex-1">
+              <p className="text-[#282928] xl:px-2 text-sm md:text-[1.2rem] leading-relaxed text-left font-satoshi flex-1">
                 {t.comment}
               </p>
 
