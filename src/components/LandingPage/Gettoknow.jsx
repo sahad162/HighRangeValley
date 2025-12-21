@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../App.css";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 function Gettoknow() {
   const [expanded, setExpanded] = useState(false);
@@ -8,7 +9,7 @@ function Gettoknow() {
     <section className="relative min-h-screen font-satoshi">
       <div className="hidden lg:block relative min-h-screen">
         <div
-          className="absolute inset-0 bg-[url('/bg_new.jpg')] bg-cover bg-center
+          className="absolute inset-0 bg-[url('/bg-image/bg-image-get.jpg')] bg-cover bg-center
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_50%)]"
         />
 
@@ -62,7 +63,15 @@ function Gettoknow() {
               onClick={() => setExpanded(!expanded)}
               className="mt-4 text-green-600 font-medium flex items-center gap-1 hover:underline"
             >
-              {expanded ? "Read less ▲" : "Read more ▼"}
+              {expanded ? (
+                <div className=" flex items-center gap-1">
+                  Read less <ChevronUp />
+                </div>
+              ) : (
+                <div className="flex items-center gap-1">
+                  Read more <ChevronDown />
+                </div>
+              )}
             </button>
           </div>
         </div>
@@ -118,11 +127,11 @@ function Gettoknow() {
               className="mt-4 text-green-600 font-medium flex items-center gap-1 hover:underline"
             >
               {expanded ? "Read less" : "Read more"}
-              <span>{expanded ? "▲" : "▼"}</span>
+              <span>{expanded ? <ChevronUp /> : <ChevronDown />}</span>
             </button>
           </div>
         </div>
-        <div className='min-h-screen bg-[url("/mobile_bg.jpg")] bg-no-repeat bg-cover bg-center relative inset-0 [mask-image:linear-gradient(to_bottom,transparent_0%,black_40%)] '></div>
+        <div className='min-h-screen bg-[url("/bg-image/mobile_bg.jpg")] bg-no-repeat bg-cover bg-center relative inset-0 [mask-image:linear-gradient(to_bottom,transparent_0%,black_40%)] '></div>
       </div>
     </section>
   );

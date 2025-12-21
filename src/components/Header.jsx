@@ -17,7 +17,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 font-satoshi">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 font-satoshi">
       <div className="px-8 lg:px-20">
         <div className="flex justify-between items-center h-17">
           <div className="flex-shrink-0">
