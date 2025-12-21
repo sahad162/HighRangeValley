@@ -4,6 +4,7 @@ function SeoContent() {
   return (
     <section
       className="
+      connect-cont
       bg-white
       py-10 lg:py-20
       px-10 lg:px-20

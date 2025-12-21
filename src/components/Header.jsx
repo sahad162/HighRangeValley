@@ -3,6 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
+import './LandingPage/css/style.css'
 
 
 export default function Header() {
@@ -17,8 +18,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 font-satoshi">
-      <div className="px-8 lg:px-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 header-design font-satoshi">
+      <div className=" header-container px-8 lg:px-20">
         <div className="flex justify-between items-center h-17">
           <div className="flex-shrink-0">
             <Link to="/">

@@ -60,7 +60,7 @@ export default function Connect() {
   };
   return (
     <section
-      className="flex flex-col md:flex-row justify-center items-stretch gap-10 px-10 lg:px-20  pb-20  bg-[#F7F9F3]"
+      className="flex flex-col md:flex-row justify-center items-stretch connect-cont gap-10 px-10 lg:px-20  pb-20  bg-[#F7F9F3]"
       id="contact"
     >
       <div className="flex flex-col justify-between   w-full ">
