@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
+import './LandingPage/css/style.css'
 
 function Footer() {
   const navigation = [
@@ -27,7 +28,7 @@ function Footer() {
 
           {/* Navigation Links */}
           <nav className="mt-9 sm:w-[50%] w-full">
-            <ul className="flex flex-wrap justify-between text-sm sm:text-md sm:font-normal">
+            <ul className="flex flex-wrap justify-between footer-text text-sm sm:text-md sm:font-normal">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <ScrollLink
@@ -35,7 +36,7 @@ function Footer() {
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    className="cursor-pointer text-white hover:text-white/50"
+                    className="cursor-pointer  text-white hover:text-white/50"
                   >
                     {item.name}
                   </ScrollLink>

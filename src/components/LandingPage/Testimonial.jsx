@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useRev from "../../hooks/useRev";
+import './css/style.css'
 
 import SkeletonCard from "../SkeletonCard";
 
@@ -71,7 +72,7 @@ export default function Testimonials() {
 
   if (!data || data.length === 0) {
     return (
-      <section className="py-20 px-10 lg:px-20 max-w-8xl mx-auto">
+      <section className="testimonial-cont py-20 px-10 lg:px-20 max-w-8xl mx-auto">
         <h2 className="text-2xl md:text-[3rem] font-medium font-satoshi-medium mb-12">
           Hear what our customers say’s
         </h2>
@@ -82,7 +83,7 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-20 px-10 lg:px-20 max-w-8xl  mx-auto"
+      className="testimonial-cont py-20 px-10 lg:px-20 max-w-8xl  mx-auto"
       id="testimonials"
     >
       <h2 className="text-2xl md:text-[3rem] font-medium font-satoshi-medium mb-12">
@@ -101,7 +102,7 @@ export default function Testimonials() {
           {data.map((t) => (
             <div
               key={t.id}
-              className="max-w-[285px] md:min-w-[350px] lg:min-w-[380px] 
+              className="card-test max-w-[285px] md:min-w-[350px] lg:min-w-[380px] 
                          bg-white rounded-xl border border-gray-200 
                          shadow-md flex flex-col justify-between p-6 flex-shrink-0"
             >

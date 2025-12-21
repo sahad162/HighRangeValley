@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { useCategories, useProducts } from "../../hooks/useProduct";
+import './css/style.css'
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState(null);
@@ -24,14 +25,14 @@ export default function Products() {
   );
 
   return (
-    <section className="py-20 px-8 lg:px-20 mb-20 bg-white" id="products">
+    <section className="products-cont py-20 px-8 lg:px-20 mb-20 bg-white" id="products">
       {/* Header */}
       <div className="flex  flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
         <div>
           <h2 className="text-[2rem] md:text-[3rem] font-satoshi-medium text-gray-900">
             Explore Our Products
           </h2>
-          <p className="mt-9 font-satoshi text-[1.1rem] text-gray-600 max-w-xl">
+          <p className="mt-9 font-satoshi text-[1.1rem] text-gray-600 max-w-xl text-justify">
             We are one of the largest dealers of{" "}
             <span className="font-semibold">premium cardamom in Kerala</span>,
             handpicked from the valleys of highrange, with unspoiled essence.

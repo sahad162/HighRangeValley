@@ -1,0 +1,69 @@
+
+
+@media (max-width:375px) {
+/* heasder  */
+    .header-container {
+    padding: 0 1.2rem;
+}
+/* hero page  */
+    .heading-hero{
+        font-size: 1.5em;
+    }
+    .hero-container{
+        padding:0 0.5rem;
+    }
+    .para-hero{
+        font-size: 0.8em;
+    }
+    .hero-but{
+        padding: 0.7rem 0rem;
+        font-size: 0.9rem;
+    }
+    .hero-last-para{
+        font-size: 0.8rem;
+    }
+    .image-hero{
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    /* products */
+.products-cont{
+    padding-bottom: 1.5rem;
+    padding-top: 4rem;
+    padding-left: 1.5rem;
+       padding-right: 1.5rem;
+}
+
+/* suppliers */
+.supplier-cont{
+    padding-left:1.5rem;
+       padding-right: 1.5rem;
+    
+}
+
+/* testimonial-cont */
+.testimonial-cont{
+    padding-left: 1.5rem;
+       padding-right: 1.5rem;
+}
+
+.card-test{
+    max-width: 255px; 
+}
+
+/* connect  */
+.connect-cont{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.footer-text{
+    font-size: 0.73rem;
+}
+}
+
+/* @media (max-width:620px) {
+    
+} */
+

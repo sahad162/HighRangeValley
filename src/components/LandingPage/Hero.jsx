@@ -1,19 +1,20 @@
+import './css/style.css'
 function Hero() {
   return (
     <section className=" bg-white relative mb-5 lg:mb-12" id="home">
       <div className="leaf relative top-5 -left-10">
         <img src="/top-left.png" alt="left-leaf" />
       </div>
-      <div className="px-5 sm:px-10   flex flex-col-reverse md:px-5 lg:px-20 lg:grid lg:grid-cols-2 gap-4 ">
+      <div className="hero-container px-5   flex flex-col-reverse md:px-5 lg:px-20 lg:grid lg:grid-cols-2 gap-4 ">
         <div className="px-4">
           <div className="heading   w-full font-satoshi-medium">
             <h2 className="hidden lg:block text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3.3rem] leading-tight font-[500]">
              Empowering Global Spice<br />  Businesses With Premium <br />  Wholesale Supply
             </h2>
-            <h2 className="block lg:hidden text-[2em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
+            <h2 className="heading-hero block lg:hidden text-[1.8em] sm:text-[3em] lg:text-[2em] xl:text-[3em] leading-tight font-[500]">
              Empowering Global <br /> Spice Businesses With <br /> Premium Wholesale Supply
             </h2>
-            <p className="mt-6 md:w-full xl:w-[70%] font-satoshi  font-light">
+            <p className="para-hero mt-6  md:w-full xl:w-[70%] font-satoshi  font-light text-justify">
              Partner with India’s No.1 spice exporter. Get exclusive wholesale rates, seamless logistics, and priority customer support for your bulk spice requirements.
             </p>
             <div className="buttons mt-7 flex lg:justify-start   gap-3">
@@ -21,14 +22,14 @@ function Hero() {
                 href="https://wa.me/message/JYTUT2TUVM7MH1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-2 justify-center items-center w-full lg:w-45 px-3 py-3 lg:px-4 lg:py-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
+                className="hero-but flex gap-2 justify-center items-center w-full lg:w-45 px-3 py-3 lg:px-4 lg:py-4 rounded-full bg-gradient-to-r from-[#88B158] to-[#146B2D] text-white text-light font-satoshi font-medium tracking-tight transition duration-200 hover:opacity-90"
               >
                 <i className="fa-brands fa-whatsapp text-sm md:text-2xl"></i>
                 <span>Connect now</span>
               </a>
 
               <a
-                className="w-full justify-center lg:w-45 px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
+                className="w-full hero-but justify-center lg:w-45 px-3 py-3 border border-[#146B2D] rounded-full lg:px-4 lg:py-4 flex text-[#146B2D] items-center gap-2"
                 href="tel:+91 9847 017714"
               >
                 <i className="fa-solid fa-phone text-sm md:text-2xl"></i>
@@ -39,22 +40,22 @@ function Hero() {
             <div className="flex items-center mt-12 sm:justify-center lg:justify-start   ">
               <div className="flex -space-x-4">
                 <img
-                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
+                  className=" image-hero w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im4.png"
                   alt="user1"
                 />
                 <img
-                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="image-hero w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im2.png"
                   alt="user2"
                 />
                 <img
-                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="image-hero w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im3.png"
                   alt="user3"
                 />
                 <img
-                  className="w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
+                  className="image-hero w-10 h-10 md:w-13 md:h-13 object-cover rounded-full border-2 border-white shadow"
                   src="/im1.png"
                   alt="user4"
                 />
@@ -63,12 +64,14 @@ function Hero() {
               <div className="border-l-[0.1em] ml-4 border-[#B6B6B6] h-12"></div>
 
               <div className="ml-6 ">
-                <p className=" text-sm sm:text-base xl:text-lg font-light ">
-                  <span className="text-[#146B2D] font-light font-satoshi">
+                <p className="hero-last-para text-justify text-sm sm:text-base xl:text-lg font-light ">
+                  <span className="text-[#146B2D] font-light font-satoshi-medium">
                     1000+
-                  </span>{" "}
-                  happy customers
+                  </span>
+                  <span className='font-satoshi-medium  text-[#282928]'>
+                   happy customers
                   <br /> across the globe
+                  </span>
                 </p>
               </div>
             </div>
