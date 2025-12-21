@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Phone, Mail } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
@@ -9,10 +9,10 @@ const IndividualPage = () => {
   const { data } = useProductDetail(id);
   const [current, setCurrent] = useState(0);
   const images = data?.images || [];
-  
+
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, [id]);
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const next = () => {
     setCurrent((prev) => (prev + 1) % images.length);
@@ -61,10 +61,12 @@ const IndividualPage = () => {
             <h1 className="text-3xl font-medium font-satoshi-medium">
               {data?.name}
             </h1>
-            <p className="text-xl font-semibold font-satoshi-medium text-gray-800 mt-1">
-              ₹ {data?.actual_price}{" "}
-              <span className="text-base font-satoshi">/Kg</span>
-            </p>
+            {data?.actual_price && (
+              <p className="text-xl font-semibold font-satoshi-medium text-gray-800 mt-1">
+                ₹ {data?.actual_price}{" "}
+                <span className="text-base font-satoshi">/Kg</span>
+              </p>
+            )}
           </div>
 
           <h2 className="mt-5 font-medium font-satoshi-medium text-lg">

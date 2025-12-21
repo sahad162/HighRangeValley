@@ -1,32 +1,29 @@
-import React, { useState,useEffect } from 'react';
-import { IndianRupee, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useCategories,useProducts } from '../hooks/useProduct';
+import React, { useState, useEffect } from "react";
+import { IndianRupee, Search } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useCategories, useProducts } from "../hooks/useProduct";
 
 function ProductsPage() {
   const [activeTab, setActiveTab] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const {data:categories}=useCategories();
-  const {data:products=[]}=useProducts();
+  const { data: categories } = useCategories();
+  const { data: products = [] } = useProducts();
 
-    useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-  
 
-    useEffect(()=>{
-      if(categories?.length>0){
-        setActiveTab(categories[0]);
-      }
-      
-    },[categories]);
+  useEffect(() => {
+    if (categories?.length > 0) {
+      setActiveTab(categories[0]);
+    }
+  }, [categories]);
 
   // Filter products by tab + search
   const filteredProduct = products.filter(
     (product) =>
-      product.categories?.some(cat => cat.id === activeTab?.id) &&
+      product.categories?.some((cat) => cat.id === activeTab?.id) &&
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -56,11 +53,31 @@ function ProductsPage() {
 
           {/* Spice icons */}
           <div className="flex justify-center gap-3 mt-8">
-            <img src="/p1.webp" alt="Spice 1" className="w-9 h-9 md:w-10 md:h-10 border-2 border-white rounded-full shadow-lg" />
-            <img src="/p2.webp" alt="Spice 2" className="w-14 h-14 md:w-16 md:h-16 border-2 border-white rounded-full shadow-lg" />
-            <img src="/p3.webp" alt="Spice 3" className="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full shadow-lg" />
-            <img src="/p1.webp" alt="Spice 4" className="w-16 h-16 md:w-20 md:h-20 border-2 border-white rounded-full shadow-lg" />
-            <img src="/p2.webp" alt="Spice 5" className="w-9 h-9 md:w-10 md:h-10 border-2 border-white rounded-full shadow-lg" />
+            <img
+              src="/p1.webp"
+              alt="Spice 1"
+              className="w-9 h-9 md:w-10 md:h-10 border-2 border-white rounded-full shadow-lg"
+            />
+            <img
+              src="/p2.webp"
+              alt="Spice 2"
+              className="w-14 h-14 md:w-16 md:h-16 border-2 border-white rounded-full shadow-lg"
+            />
+            <img
+              src="/p3.webp"
+              alt="Spice 3"
+              className="w-10 h-10 md:w-12 md:h-12 border-2 border-white rounded-full shadow-lg"
+            />
+            <img
+              src="/p1.webp"
+              alt="Spice 4"
+              className="w-16 h-16 md:w-20 md:h-20 border-2 border-white rounded-full shadow-lg"
+            />
+            <img
+              src="/p2.webp"
+              alt="Spice 5"
+              className="w-9 h-9 md:w-10 md:h-10 border-2 border-white rounded-full shadow-lg"
+            />
           </div>
         </div>
 
@@ -75,24 +92,24 @@ function ProductsPage() {
           {/* Tabs */}
           <div className="flex gap-3">
             {categories?.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab)}
-              className={`shrink-0 px-3 md:text-base sm:text-sm text-sm md:px-4 py-2 rounded-full font-medium font-satoshi-medium transition-colors duration-300 ${
-                activeTab?.id === tab.id
-                  ? "bg-gradient-to-r from-[#88B158] via-[#88B158] to-[#146B2D] text-white"
-                  : "text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              {activeTab?.id === tab.id ? (
-                <span className="bg-clip-text md:text-base sm:text-sm text-sm text-white">
-                  {tab.name}
-                </span>
-              ) : (
-                tab.name
-              )}
-            </button>
-          ))}
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab)}
+                className={`shrink-0 px-3 md:text-base sm:text-sm text-sm md:px-4 py-2 rounded-full font-medium font-satoshi-medium transition-colors duration-300 ${
+                  activeTab?.id === tab.id
+                    ? "bg-gradient-to-r from-[#88B158] via-[#88B158] to-[#146B2D] text-white"
+                    : "text-gray-600 hover:bg-gray-100"
+                }`}
+              >
+                {activeTab?.id === tab.id ? (
+                  <span className="bg-clip-text md:text-base sm:text-sm text-sm text-white">
+                    {tab.name}
+                  </span>
+                ) : (
+                  tab.name
+                )}
+              </button>
+            ))}
           </div>
 
           {/* Search */}
@@ -111,7 +128,11 @@ function ProductsPage() {
         <div className="px-8 gap-6 lg:px-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {filteredProduct.length > 0 ? (
             filteredProduct.map((product) => (
-              <Link key={product.id} to={`/product/${product.id}`} className="flex flex-col">
+              <Link
+                key={product.id}
+                to={`/product/${product.id}`}
+                className="flex flex-col"
+              >
                 <div className="relative rounded-xl w-full h-[212px] md:w-full xl:w-full shadow-sm overflow-hidden hover:shadow-sm transition md:h-100">
                   <img
                     src={product.images[0].image}
@@ -128,11 +149,17 @@ function ProductsPage() {
 
                   <div className="mt-2 sm:mt-0 flex items-center gap-1 ">
                     <span className="text-[#0D7E2D] text-[10px] sm:text-sm lg:text-base font-satoshi-medium">
-                      {product?.offer_percentage}% OFF
+                      {product?.offer_percentage && (
+                        <span>{product.offer_percentage}% OFF</span>
+                      )}
                     </span>
                     <span className="flex items-center text-xs sm:text-sm lg:text-base font-satoshi-medium">
-                      <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
-                      {product?.price}
+                      {product?.price && (
+                        <>
+                          <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
+                          {product.price}
+                        </>
+                      )}
                     </span>
                   </div>
                 </div>
@@ -141,7 +168,7 @@ function ProductsPage() {
           ) : (
             <div className="col-span-full text-center py-10">
               <p className="text-gray-500 font-satoshi-medium text-lg">
-                No products found 
+                No products found
               </p>
             </div>
           )}

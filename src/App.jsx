@@ -4,10 +4,11 @@ import LandingPage from "./pages/LandingPage";
 import PageNotFound from "./pages/PageNotFound";
 import Loader from "./components/Loader";
 import ProductsPage from "./pages/ProductsPage";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import IndividualPage from "./pages/IndividualPage";
 import { Toaster } from "react-hot-toast";
+
+import MainLayout from "./layouts/MainLayout";
+import ErrorLayout from "./layouts/ErrorLayout";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,23 +18,23 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  if (loading) return <Loader />;
+
   return (
     <>
-      {loading && <Loader />}
+      <Toaster position="top-right" reverseOrder={false} />
 
-      {!loading && (
-        <>
-          <Header />
-          <Toaster position="top-right" reverseOrder={false}  />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/product/:id" element={<IndividualPage />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-          <Footer />
-        </>
-      )}
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<IndividualPage />} />
+        </Route>
+
+        <Route element={<ErrorLayout />}>
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
     </>
   );
 }
